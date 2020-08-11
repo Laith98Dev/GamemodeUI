@@ -12,8 +12,8 @@ use pocketmine\utils\{TextFormat as TF, Config};
 use pocketmine\command\{CommandSender, Command};
 
 // FormAPI
-use libs\FormAPI\jojoe77777\FormAPI;
-use libs\FormAPI\jojoe77777\FormAPI\SimpleForm;
+use jojoe77777\FormAPI;
+use jojoe77777\FormAPI\SimpleForm;
 
 class Main extends PluginBase implements Listener
 {
@@ -67,7 +67,7 @@ class Main extends PluginBase implements Listener
 	* @parm Player $Player
 	* @return FormAPI
 	*/
-	public function OpenGamemodeUI(Player $player){
+	public function OpenGamemodeUI(Player $player): ?FormAPI{
 	if(!$this->Enable){
 			$player->sendMessage(TF::RED . "Cannot Open UI Plugin FormAPI not Found, Please install FormAPI\nLink: https://poggit.pmmp.io/p/FormAPI/1.3.0");
 		} else {
