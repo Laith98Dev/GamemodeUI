@@ -12,8 +12,8 @@ use pocketmine\utils\{TextFormat as TF, Config};
 use pocketmine\command\{CommandSender, Command};
 
 // FormAPI
-use jojoe77777\FormAPI;
-use jojoe77777\FormAPI\SimpleForm;
+use FormAPI\jojoe77777\FormAPI;
+use FormAPI\jojoe77777\FormAPI\SimpleForm;
 
 class Main extends PluginBase implements Listener
 {
