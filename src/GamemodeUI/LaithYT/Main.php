@@ -4,7 +4,7 @@ namespace GamemodeUI\LaithYT;
 
 use pocketmine\{Server, Player};
 
-use pocketmine\plugin\PluginBase;
+use pocketmine\plugin\{PluginBase, Plugin};
 use pocketmine\event\Listener;
 
 use pocketmine\utils\{TextFormat as TF, Config};
@@ -21,6 +21,7 @@ class Main extends PluginBase implements Listener
 	public $Enable = true;//TODO: If not found FormAPI plugin, set Enable false
 	
 	public function onEnable(){
+		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
 		if($api == null){
 			$this->Enable = false;
@@ -69,8 +70,7 @@ class Main extends PluginBase implements Listener
 	public function OpenGamemodeUI(Player $player){
 	if(!$this->Enable){
 			$player->sendMessage(TF::RED . "Cannot Open UI Plugin FormAPI not Found, Please install FormAPI\nLink: https://poggit.pmmp.io/p/FormAPI/1.3.0");
-			return true;
-		}
+		} else {
 		$form = new SimpleForm(function(Player $player, int $data = null){
 		if($data === null){
 				return true;
@@ -105,5 +105,6 @@ class Main extends PluginBase implements Listener
 		$form->addButton(TF::AQUA . "Spectator");
 		$form->sendToPlayer($player);
 		return $form;
+		}
 	}
 }
