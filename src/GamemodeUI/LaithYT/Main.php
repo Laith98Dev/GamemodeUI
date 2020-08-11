@@ -87,7 +87,7 @@ class Main extends PluginBase implements Listener
 							 return true;
 						}
 						if(isset($args[0])){
-							if(!in_array($args[0], [0, 1, 2, 3])){
+							if(in_array($args[0], [0, 1, 2, 3])){
 								$sender->setGamemode($args[0]);
 								$this->sendMessage($sender, $args[0]);
 								return true;
