@@ -87,12 +87,12 @@ class Main extends PluginBase implements Listener
 							 return true;
 						}
 						if(isset($args[0])){
-							if(in_array($args[0], [0, 1, 2, 3])){
-								$sender->setGamemode($args[0]);
-								$this->sendMessage($sender, $args[0]);
+							if(!in_array($args[0], array('0', '1', '2', '3'))){
+								$sender->sendMessage(TF::RED . "Usage: /gm [0|1|2|3]");
 								return true;
 							}
-							$sender->sendMessage(TF::RED . "Usage: /gm [0|1|2|3]");
+							$sender->setGamemode($args[0]);
+							$this->sendMessage($sender, $args[0]);
 						}
 				} else {
 					$sender->sendMessage("Cannot use the command here!");
