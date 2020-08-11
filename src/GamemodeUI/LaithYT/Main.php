@@ -84,12 +84,15 @@ class Main extends PluginBase implements Listener
 						}
 						if(!isset($args[0])){
 						     $this->OpenGamemodeUI($sender);
+							 return true;
 						}
 						if(isset($args[0])){
-							if(!in_array($args[0], array(0, 1, 2, 3))){
-								$sender->sendMessage(TF::RED . "Usage: /gm [0|1|2|3]");
+							if(!in_array($args[0], [0, 1, 2, 3])){
+								$player->setGamemode($args[0]);
+								$this->sendMessage($args[0]);
 								return true;
 							}
+							$sender->sendMessage(TF::RED . "Usage: /gm [0|1|2|3]");
 						}
 				} else {
 					$sender->sendMessage("Cannot use the command here!");
@@ -97,6 +100,26 @@ class Main extends PluginBase implements Listener
 			break;
 		}
 		return true;
+	}
+	
+	public function sendMessage(string $message){
+		switch($message){
+			case 0:
+			$player->sendMessage("set own game mode to Survival Mode");
+			break;
+			
+			case 1:
+			$player->sendMessage("set own game mode to Creative Mode");
+			break;
+			
+			case 2:
+			$player->sendMessage("set own game mode to Adventure Mode");
+			break;
+			
+			case 3:
+			$player->sendMessage("set own game mode to Selectetor Mode");
+			break;
+		}
 	}
 	
 	public function OpenGamemodeUI(Player $player){
@@ -110,22 +133,22 @@ class Main extends PluginBase implements Listener
 			switch($data){
 				case 0:
 					$player->setGamemode(0);
-					$player->sendMessage("set own game mode to Survival Mode");
+					$this->sendMessage(0);
 				break;
 				
 				case 1:
 					$player->setGamemode(1);
-					$player->sendMessage("set own game mode to Creative Mode");
+					$this->sendMessage(1);
 				break;
 				
 				case 2:
 					$player->setGamemode(2);
-					$player->sendMessage("set own game mode to Adventure Mode");
+					$this->sendMessage(2);
 				break;
 				
 				case 3:
 					$player->setGamemode(3);
-					$player->sendMessage("set own game mode to Selectetor Mode");
+					$this->sendMessage(3);
 				break;
 			}
 		});
