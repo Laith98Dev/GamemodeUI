@@ -9,4 +9,8 @@ website: https://github.com/laith98
 commands: 
  gm:
     description: "GamemodeUI Command"
-    usage: "/gm"
+    permission: "gm.cmd"
+permissions:
+ gm.cmd:
+    description: "GamemodeUI Permission"
+    defualt: op
