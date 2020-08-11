@@ -50,16 +50,12 @@ use pocketmine\command\{CommandSender, Command};
 use jojoe77777\FormAPI;
 use jojoe77777\FormAPI\SimpleForm;
 
-// Plugin Update
-use JackMD\UpdateNotifier\UpdateNotifier;
-
 class Main extends PluginBase implements Listener
 {
 	/** @var bool */
 	public $Enable = true;//TODO: If not found FormAPI plugin, set Enable false
 	
 	public function onEnable(){
-		UpdateNotifier::checkUpdate($this->getDescription()->getName(), $this->getDescription()->getVersion());
 		$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
 		if($api == null){
 			$this->Enable = false;
