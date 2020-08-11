@@ -99,10 +99,6 @@ class Main extends PluginBase implements Listener
 		return true;
 	}
 	
-   /**
-	* @parm Player $Player
-	* @return FormAPI|bool
-	*/
 	public function OpenGamemodeUI(Player $player){
 	if(!$this->Enable){
 			$player->sendMessage(TF::RED . "Cannot Open UI Plugin FormAPI not Found, Please install FormAPI\nLink: https://poggit.pmmp.io/p/FormAPI/1.3.0");
