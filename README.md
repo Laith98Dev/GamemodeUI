@@ -1,6 +1,11 @@
 ## GamemodeUI
 Easily Change Gamemode
 
+[![](https://poggit.pmmp.io/shield.state/GamemodeUI)](https://poggit.pmmp.io/p/GamemodeUI)
+<a href="https://poggit.pmmp.io/p/GamemodeUI"><img src="https://poggit.pmmp.io/shield.state/GamemodeUI"></a>
+
+[![](https://poggit.pmmp.io/shield.api/GamemodeUI)](https://poggit.pmmp.io/p/GamemodeUI)
+<a href="https://poggit.pmmp.io/p/GamemodeUI"><img src="https://poggit.pmmp.io/shield.api/GamemodeUI"></a>
 ## Commands
 
 Command | Description | Permission
