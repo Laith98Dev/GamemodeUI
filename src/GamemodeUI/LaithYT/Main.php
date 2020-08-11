@@ -2,6 +2,41 @@
 
 namespace GamemodeUI\LaithYT;
 
+/*  Copyright (2018 - 2020) (C) LaithYoutuber
+ *
+ * Plugin By LaithYT , Gihhub:                                                                           
+ *                                                                                                      
+ *		88  		8855555555	88888889888	888888888888 88			88	 88888888888'8	888888888888'8  
+ *		88			88		88		88			88		 88			88	 88		 	88	88			88  
+ *		88			88		88		88			88	   	 88			88	 88			88	88			88  
+ *		88			88		88		88			88		 88			88	 88			88	88			88  
+ *		88			88		88		88			88		 88			88	 88			88	88			88  
+ *		88			8855555588		88			88		 8855555555588   8888888855553	88555555555588	
+ *		88			88		88		88			88		 88			88	 			88	88			88  
+ *		88			88		88		88			88		 88			88	 			88	88			88  
+ *		88			88		88		88			88		 88			88				88	88			88 
+ *		85      	88		88		88			88		 88			88				88	88			88  
+ *		8855555555	88		88	88888889888		88		 88			88   5555555555588	88888888888888  
+ *		                                                                                                
+ *		Youtube: Laith Youtuber                                                                         
+ *		Facebook: Laith A Al Haddad                                                                     
+ *		Discord: Laith.97#8167                                                                          
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 use pocketmine\{Server, Player};
 
 use pocketmine\plugin\PluginBase;
