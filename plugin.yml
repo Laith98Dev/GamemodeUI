@@ -1,0 +1,12 @@
+name: GamemodeUI
+main: GamemodeUILaithYT\Main
+version: 1.0
+api: [3.0.0]
+author: LaithYT
+description: Easily Chang Gamemode
+website: https://github.com/laith98
+
+commands: 
+ gm:
+    description: "GamemodeUI Command"
+    usage: "/gm"
