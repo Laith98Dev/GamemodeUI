@@ -88,8 +88,8 @@ class Main extends PluginBase implements Listener
 						}
 						if(isset($args[0])){
 							if(!in_array($args[0], [0, 1, 2, 3])){
-								$player->setGamemode($args[0]);
-								$this->sendMessage($args[0]);
+								$sender->setGamemode($args[0]);
+								$this->sendMessage($sender, $args[0]);
 								return true;
 							}
 							$sender->sendMessage(TF::RED . "Usage: /gm [0|1|2|3]");
@@ -102,7 +102,7 @@ class Main extends PluginBase implements Listener
 		return true;
 	}
 	
-	public function sendMessage(string $message){
+	public function sendMessage(Player $player, string $message){
 		switch($message){
 			case 0:
 			$player->sendMessage("set own game mode to Survival Mode");
@@ -133,22 +133,22 @@ class Main extends PluginBase implements Listener
 			switch($data){
 				case 0:
 					$player->setGamemode(0);
-					$this->sendMessage(0);
+					$this->sendMessage($player, 0);
 				break;
 				
 				case 1:
 					$player->setGamemode(1);
-					$this->sendMessage(1);
+					$this->sendMessage($player, 1);
 				break;
 				
 				case 2:
 					$player->setGamemode(2);
-					$this->sendMessage(2);
+					$this->sendMessage($player, 2);
 				break;
 				
 				case 3:
 					$player->setGamemode(3);
-					$this->sendMessage(3);
+					$this->sendMessage($player, 3);
 				break;
 			}
 		});
