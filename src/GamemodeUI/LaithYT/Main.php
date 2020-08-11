@@ -67,7 +67,7 @@ class Main extends PluginBase implements Listener
 	* @parm Player $Player
 	* @return FormAPI
 	*/
-	public function OpenGamemodeUI(Player $player): ?FormAPI{
+	public function OpenGamemodeUI(Player $player){
 	if(!$this->Enable){
 			$player->sendMessage(TF::RED . "Cannot Open UI Plugin FormAPI not Found, Please install FormAPI\nLink: https://poggit.pmmp.io/p/FormAPI/1.3.0");
 		} else {
@@ -104,7 +104,7 @@ class Main extends PluginBase implements Listener
 		$form->addButton(TF::AQUA . "Adventure");
 		$form->addButton(TF::AQUA . "Spectator");
 		$form->sendToPlayer($player);
-		return $form;
+		//return $form;
 		}
 	}
 }
