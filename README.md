@@ -18,3 +18,6 @@ Command | Description | Permission
 - [x] Gamemode 1
 - [x] Gamemode 2
 - [x] Gamemode 3
+
+## Tutorial
+https://www.youtube.com/watch?v=zNwcs2tr-Nk
