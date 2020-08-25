@@ -1,6 +1,6 @@
 name: GamemodeUI
 main: GamemodeUI\LaithYT\Main
-version: 1.0
+version: 1.0.1
 api: [3.0.0]
 author: LaithYT
 description: Easily Chang Gamemode
@@ -9,8 +9,11 @@ website: https://github.com/laith98
 commands: 
  gm:
     description: "GamemodeUI Command"
-    permission: "gm.cmd"
+    permission: "gm.command"
 permissions:
- gm.cmd:
+ gm.command:
     description: "GamemodeUI Permission"
+    defualt: op
+ gm.form:
+    description: "GamemodeUI Permission Open Form"
     defualt: op
