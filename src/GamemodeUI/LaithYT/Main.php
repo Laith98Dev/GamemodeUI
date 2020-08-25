@@ -47,23 +47,15 @@ use pocketmine\utils\{TextFormat as TF, Config};
 
 use pocketmine\command\{CommandSender, Command};
 
-// FormAPI
+// virion FormAPI
 use jojoe77777\FormAPI;
 use jojoe77777\FormAPI\SimpleForm;
 
 class Main extends PluginBase implements Listener
 {
-	/** @var bool */
-	public $Enable = true;//TODO: If not found FormAPI plugin, set Enable false
 	
 	public function onEnable(){
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
-		if($api == null){
-			$this->Enable = false;
-		} else {
-			$this->Enable = true;
-		}
 	}
 	
 	
@@ -78,21 +70,27 @@ class Main extends PluginBase implements Listener
 		switch($cmd->getName()){
 			case "gm":
 				if($sender instanceof Player){
-					if(!$sender->hasPermission("gm.cmd")){
-						$sender->sendMessage(TF::RED . "you dont have permission to use the command");
-						return true;
-						}
-						if(!isset($args[0])){
-						     $this->OpenGamemodeUI($sender);
-							 return true;
-						}
-						if(isset($args[0])){
+					if(isset($args[0])){
+						if(!$sender->hasPermission("gamemode.command")){
+							$sender->sendMessage(TF::RED . "you dont have permission to use the command");
+							return true;
+							}
+							
 							if(!in_array($args[0], array('0', '1', '2', '3'))){
 								$sender->sendMessage(TF::RED . "Usage: /gm [0|1|2|3]");
 								return true;
 							}
+							
 							$sender->setGamemode($args[0]);
 							$this->sendMessage($sender, $args[0]);
+						}
+						if(!isset($args[0])){
+							if(!$sender->hasPermission("gamemode.form")){
+								$sender->sendMessage(TF::RED . "you dont have permission to use the command");
+								return true;
+							}
+						    $this->OpenGamemodeUI($sender);
+							return true;
 						}
 				} else {
 					$sender->sendMessage("Cannot use the command here!");
@@ -123,33 +121,30 @@ class Main extends PluginBase implements Listener
 	}
 	
 	public function OpenGamemodeUI(Player $player){
-	if(!$this->Enable){
-			$player->sendMessage(TF::RED . "Cannot Open UI Plugin FormAPI not Found, Please install FormAPI\nLink: https://poggit.pmmp.io/p/FormAPI/1.3.0");
-		} else {
-		$form = new SimpleForm(function(Player $player, int $data = null){
-		if($data === null){
-				return true;
-			}
-			switch($data){
-				case 0:
-					$player->setGamemode(0);
-					$this->sendMessage($player, 0);
-				break;
+	$form = new SimpleForm(function(Player $player, int $data = null){
+	if($data === null){
+			return true;
+		}
+		switch($data){
+			case 0:
+				$player->setGamemode(0);
+				$this->sendMessage($player, 0);
+			break;
 				
-				case 1:
-					$player->setGamemode(1);
-					$this->sendMessage($player, 1);
-				break;
-				
-				case 2:
-					$player->setGamemode(2);
-					$this->sendMessage($player, 2);
-				break;
-				
-				case 3:
-					$player->setGamemode(3);
-					$this->sendMessage($player, 3);
-				break;
+			case 1:
+				$player->setGamemode(1);
+				$this->sendMessage($player, 1);
+			break;
+			
+			case 2:
+				$player->setGamemode(2);
+				$this->sendMessage($player, 2);
+			break;
+			
+			case 3:
+				$player->setGamemode(3);
+				$this->sendMessage($player, 3);
+			break;
 			}
 		});
 		$form->setTitle(TF::YELLOW . "GamemodeUI");
