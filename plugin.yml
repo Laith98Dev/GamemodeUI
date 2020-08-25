@@ -11,9 +11,9 @@ commands:
     description: "GamemodeUI Command"
 
 permissions:
- gamemode.command:
+ gamemodeui.command:
     description: "GamemodeUI Permission"
     defualt: op
- gamemode.form:
+ gamemodeui.form:
     description: "GamemodeUI Permission to Open Form"
     defualt: op
