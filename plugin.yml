@@ -3,17 +3,17 @@ main: GamemodeUI\LaithYT\Main
 version: 1.0.1
 api: [3.0.0]
 author: LaithYT
-description: Easily Chang Gamemode
+description: Easily Change Gamemode
 website: https://github.com/laith98
 
 commands: 
  gm:
     description: "GamemodeUI Command"
-    permission: "gm.command"
+
 permissions:
  gamemode.command:
     description: "GamemodeUI Permission"
     defualt: op
  gamemode.form:
-    description: "GamemodeUI Permission Open Form"
+    description: "GamemodeUI Permission to Open Form"
     defualt: op
