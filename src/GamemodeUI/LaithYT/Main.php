@@ -155,6 +155,5 @@ class Main extends PluginBase implements Listener
 		$form->addButton(TF::AQUA . "Spectator");
 		$form->sendToPlayer($player);
 		return $form;
-		}
 	}
 }
